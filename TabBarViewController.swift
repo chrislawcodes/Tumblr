@@ -8,18 +8,17 @@
 
 import UIKit
 
+
 class TabBarViewController: UIViewController {
 
     @IBOutlet var fullUIView: UIView!
     @IBOutlet weak var contentView: UIView!
 
     @IBOutlet var buttons: [UIButton]!
-
-
     
     var HomeViewController: UIViewController!
     var SearchViewController: UIViewController!
-    var ComposeViewController: UIViewController!
+//    var ComposeViewController: UIViewController!
     var AccountViewController: UIViewController!
     var TrendingViewController: UIViewController!
     
@@ -35,14 +34,13 @@ class TabBarViewController: UIViewController {
         
         SearchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController")
         
-        ComposeViewController = storyboard.instantiateViewControllerWithIdentifier("ComposeViewController")
+//        ComposeViewController = storyboard.instantiateViewControllerWithIdentifier("ComposeViewController")
         
         AccountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController")
         
         TrendingViewController = storyboard.instantiateViewControllerWithIdentifier("TrendingViewController")
 
         viewControllers = [HomeViewController, SearchViewController, AccountViewController, TrendingViewController]
-
         
         buttons[selectedIndex].selected = true
         didPressTab(buttons[selectedIndex])
@@ -75,6 +73,7 @@ class TabBarViewController: UIViewController {
         contentView.addSubview(vc.view)
         vc.didMoveToParentViewController(self)
     }
+
     
 
 
