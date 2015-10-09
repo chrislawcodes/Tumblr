@@ -10,7 +10,12 @@ import UIKit
 
 class TabBarViewController: UIViewController {
 
+    @IBOutlet var fullUIView: UIView!
     @IBOutlet weak var contentView: UIView!
+
+    @IBOutlet var buttons: [UIButton]!
+
+
     
     var HomeViewController: UIViewController!
     var SearchViewController: UIViewController!
@@ -18,51 +23,58 @@ class TabBarViewController: UIViewController {
     var AccountViewController: UIViewController!
     var TrendingViewController: UIViewController!
     
+    var viewControllers: [UIViewController]!
+    var selectedIndex: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let storyboard = UIStoryboard(name:"Main", bundle: nil)
         
-        HomeViewController = storyboard.instantiateViewControllerWithIdentifier ("HomeViewController")
-        SearchViewController = storyboard.instantiateViewControllerWithIdentifier ("SearchViewController")
-        ComposeViewController = storyboard.instantiateViewControllerWithIdentifier ("ComposeViewController")
-        AccountViewController = storyboard.instantiateViewControllerWithIdentifier ("AccountViewController")
-        TrendingViewController =  storyboard.instantiateViewControllerWithIdentifier ("TrendingViewController")
+        HomeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController")
         
+        SearchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController")
+        
+        ComposeViewController = storyboard.instantiateViewControllerWithIdentifier("ComposeViewController")
+        
+        AccountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController")
+        
+        TrendingViewController = storyboard.instantiateViewControllerWithIdentifier("TrendingViewController")
 
+        viewControllers = [HomeViewController, SearchViewController, AccountViewController, TrendingViewController]
 
+        
+        buttons[selectedIndex].selected = true
+        didPressTab(buttons[selectedIndex])
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
-    
-    @IBAction func onHomeButton(sender: AnyObject) {
-        contentView.addSubview(HomeViewController.view)
+    @IBAction func didPressTab(sender: UIButton) {
+        let previousIndex = selectedIndex
+        selectedIndex = sender.tag
+        buttons[previousIndex].selected = false
         
-    }
+        var previousVC = viewControllers[previousIndex]
 
-    @IBAction func onSearchButton(sender: AnyObject) {
-        contentView.addSubview(SearchViewController.view)
+        //Remove previous View Controller
+        previousVC.willMoveToParentViewController(nil)
+        previousVC.view.removeFromSuperview()
+        previousVC.removeFromParentViewController()
+        
+        //Add new View Controller
+        sender.selected = true
+        let vc = viewControllers[selectedIndex]
+        addChildViewController(vc)
+        vc.view.frame = contentView.bounds
+        contentView.addSubview(vc.view)
+        vc.didMoveToParentViewController(self)
     }
-    
-    
-    @IBAction func onComposeButton(sender: AnyObject) {
-        contentView.addSubview(ComposeViewController.view)
-    }
-    
-    @IBAction func onAccountButton(sender: AnyObject) {
-        contentView.addSubview(AccountViewController.view)
-    }
-
-    @IBAction func onTrendingButton(sender: AnyObject) {
-        contentView.addSubview(TrendingViewController.view)
-    }
-    
-    
-    
     
 
 

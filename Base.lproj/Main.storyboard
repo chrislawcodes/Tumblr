@@ -200,34 +200,25 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view tag="-1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nXY-Sw-vc4">
+                            <view tag="-1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nXY-Sw-vc4" userLabel="Tab Controller View">
                                 <rect key="frame" x="0.0" y="615" width="375" height="55"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLn-Gd-JRC">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLn-Gd-JRC">
                                         <rect key="frame" x="96" y="0.0" width="55" height="55"/>
                                         <animations/>
                                         <state key="normal" image="search_icon"/>
                                         <state key="selected" image="search_selected_icon"/>
                                         <connections>
-                                            <action selector="onSearchButton:" destination="ir4-A0-oOK" eventType="touchUpInside" id="m8V-CF-25e"/>
+                                            <action selector="didPressTab:" destination="ir4-A0-oOK" eventType="touchUpInside" id="ar5-zL-coa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDt-Zg-Whf">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDt-Zg-Whf">
                                         <rect key="frame" x="247" y="0.0" width="55" height="55"/>
                                         <animations/>
                                         <state key="normal" image="account_icon"/>
                                         <state key="selected" image="account_selected_icon"/>
                                         <connections>
-                                            <action selector="onAccountButton:" destination="ir4-A0-oOK" eventType="touchUpInside" id="hgx-hD-WZi"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucB-y5-asG">
-                                        <rect key="frame" x="312" y="0.0" width="55" height="55"/>
-                                        <animations/>
-                                        <state key="normal" image="trending_icon"/>
-                                        <state key="selected" image="trending_selected_icon"/>
-                                        <connections>
-                                            <action selector="onTrendingButton:" destination="ir4-A0-oOK" eventType="touchUpInside" id="x2q-dY-p1S"/>
+                                            <action selector="didPressTab:" destination="ir4-A0-oOK" eventType="touchUpInside" id="xFe-na-ySi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCQ-UV-eBg" userLabel="HomeButton">
@@ -236,20 +227,26 @@
                                         <state key="normal" image="home_icon"/>
                                         <state key="selected" image="home_selected_icon"/>
                                         <connections>
-                                            <action selector="onHomeButton:" destination="ir4-A0-oOK" eventType="touchUpInside" id="366-bR-onG"/>
+                                            <action selector="didPressTab:" destination="ir4-A0-oOK" eventType="touchUpInside" id="JTs-Hl-5lY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXA-Uq-6rq">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXA-Uq-6rq">
                                         <rect key="frame" x="175" y="0.0" width="55" height="55"/>
                                         <animations/>
                                         <state key="normal" image="compose_button"/>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucB-y5-asG">
+                                        <rect key="frame" x="312" y="0.0" width="55" height="55"/>
+                                        <animations/>
+                                        <state key="normal" image="trending_icon"/>
+                                        <state key="selected" image="trending_selected_icon"/>
                                         <connections>
-                                            <action selector="onComposeButton:" destination="ir4-A0-oOK" eventType="touchUpInside" id="MNa-za-1zp"/>
+                                            <action selector="didPressTab:" destination="ir4-A0-oOK" eventType="touchUpInside" id="cPF-xh-MBt"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.26666666666666666" alpha="0.91720333614864868" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <animations/>
@@ -258,6 +255,11 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="contentView" destination="Cqe-Gc-d10" id="pUY-oW-n8S"/>
+                        <outlet property="fullUIView" destination="Kc8-8D-99D" id="elJ-jx-S89"/>
+                        <outletCollection property="buttons" destination="jCQ-UV-eBg" collectionClass="NSMutableArray" id="uk9-lp-pt7"/>
+                        <outletCollection property="buttons" destination="VLn-Gd-JRC" collectionClass="NSMutableArray" id="oT3-am-3JM"/>
+                        <outletCollection property="buttons" destination="DDt-Zg-Whf" collectionClass="NSMutableArray" id="irg-Eq-JB7"/>
+                        <outletCollection property="buttons" destination="ucB-y5-asG" collectionClass="NSMutableArray" id="aLu-50-3Mb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujl-rP-LTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
