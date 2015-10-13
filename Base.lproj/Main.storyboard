@@ -19,13 +19,24 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="GKw-F8-4UR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="670"/>
                                 <animations/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="home_overlay" translatesAutoresizingMaskIntoConstraints="NO" id="2PL-bm-Oi2">
-                                <rect key="frame" x="0.0" y="333" width="375" height="120"/>
-                                <animations/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="9Qe-gZ-Eyz" appends="YES" id="osW-9a-Zwg"/>
+                                </connections>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="home_spinner" translatesAutoresizingMaskIntoConstraints="NO" id="vdx-jx-Smh">
                                 <rect key="frame" x="102" y="215" width="170" height="170"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dts-UW-7lF">
+                                <rect key="frame" x="292" y="28" width="83" height="52"/>
+                                <animations/>
+                                <connections>
+                                    <segue destination="Q0U-Ke-B8K" kind="presentation" id="U4h-HR-jgx"/>
+                                </connections>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="home_overlay" translatesAutoresizingMaskIntoConstraints="NO" id="2PL-bm-Oi2">
+                                <rect key="frame" x="0.0" y="322" width="375" height="120"/>
                                 <animations/>
                             </imageView>
                         </subviews>
@@ -35,6 +46,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="In2-tL-z11" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9Qe-gZ-Eyz"/>
             </objects>
             <point key="canvasLocation" x="1342.5" y="461.5"/>
         </scene>
@@ -50,15 +62,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="loading-1" translatesAutoresizingMaskIntoConstraints="NO" id="Sem-1r-yRa">
+                                <rect key="frame" x="157" y="251" width="61" height="19"/>
+                                <animations/>
+                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="search_feed" translatesAutoresizingMaskIntoConstraints="NO" id="QPy-Ot-Lhl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="670"/>
                                 <animations/>
                             </imageView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.1960784314" blue="0.2666666667" alpha="0.91720333610000004" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="loadingView" destination="Sem-1r-yRa" id="vgg-Y6-IV0"/>
+                        <outlet property="searchfeedView" destination="QPy-Ot-Lhl" id="yQo-W9-gje"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KWL-BY-3VW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,7 +142,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIQ-jL-kXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="899.5" y="1191.5"/>
+            <point key="canvasLocation" x="899.5" y="1267.5"/>
+        </scene>
+        <!--Log In View Controller-->
+        <scene sceneID="IY2-Ie-yQg">
+            <objects>
+                <viewController id="Q0U-Ke-B8K" customClass="LogInViewController" customModule="Tumblr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lsa-Ia-ZZt"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wq8-wf-DSM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0gr-Z8-G0c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="login_form" translatesAutoresizingMaskIntoConstraints="NO" id="3R9-a5-Nhj">
+                                <rect key="frame" x="37" y="171" width="300" height="132"/>
+                                <animations/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="xDe-M3-5gr" appends="YES" id="T4x-1H-20j"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.1960784314" blue="0.2666666667" alpha="0.91720333610000004" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ja6-j1-hVM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xDe-M3-5gr">
+                    <connections>
+                        <action selector="onLoginTap:" destination="Q0U-Ke-B8K" id="ffs-Vs-4S5"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1342.5" y="1267.5"/>
+        </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="fYE-L3-Md3">
+            <objects>
+                <viewController storyboardIdentifier="LoadingViewController" id="1kX-DC-IFe" customClass="LoadingViewController" customModule="Tumblr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GOI-ps-kIm"/>
+                        <viewControllerLayoutGuide type="bottom" id="XGc-gl-Zej"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7XA-Dy-kUs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="loading-1" translatesAutoresizingMaskIntoConstraints="NO" id="sLF-P9-OUF">
+                                <rect key="frame" x="157" y="324" width="61" height="19"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.1960784314" blue="0.2666666667" alpha="0.91720333610000004" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="loadingImageView" destination="sLF-P9-OUF" id="y4b-yL-yFB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YsI-fh-IX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1749.5" y="1267.5"/>
         </scene>
         <!--AccountViewController-->
         <scene sceneID="80l-XF-PeX">
@@ -198,6 +282,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cqe-Gc-d10" userLabel="ContentView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="615"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.14901960780000001" green="0.1960784314" blue="0.2666666667" alpha="0.91720333610000004" colorSpace="calibratedRGB"/>
+                            </view>
                             <view tag="-1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nXY-Sw-vc4" userLabel="Tab Controller View">
                                 <rect key="frame" x="0.0" y="615" width="375" height="55"/>
                                 <subviews>
@@ -245,14 +334,13 @@
                                             <action selector="didPressTab:" destination="ir4-A0-oOK" eventType="touchUpInside" id="JTs-Hl-5lY"/>
                                         </connections>
                                     </button>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="explore_popup" translatesAutoresizingMaskIntoConstraints="NO" id="yPu-CE-9Xd">
+                                        <rect key="frame" x="18" y="-60" width="185" height="77"/>
+                                        <animations/>
+                                    </imageView>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cqe-Gc-d10" userLabel="ContentView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="615"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <animations/>
@@ -260,7 +348,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="contentView" destination="Cqe-Gc-d10" id="pUY-oW-n8S"/>
+                        <outlet property="contentView" destination="Cqe-Gc-d10" id="Fu8-0z-A87"/>
+                        <outlet property="exploreBubbleView" destination="yPu-CE-9Xd" id="uBM-27-zH0"/>
                         <outlet property="fullUIView" destination="Kc8-8D-99D" id="elJ-jx-S89"/>
                         <outletCollection property="buttons" destination="jCQ-UV-eBg" collectionClass="NSMutableArray" id="uk9-lp-pt7"/>
                         <outletCollection property="buttons" destination="VLn-Gd-JRC" collectionClass="NSMutableArray" id="oT3-am-3JM"/>
@@ -279,12 +368,15 @@
         <image name="account_selected_icon" width="35" height="35"/>
         <image name="chat_icon" width="75" height="96"/>
         <image name="compose_button" width="50" height="35"/>
+        <image name="explore_popup" width="185" height="77"/>
         <image name="home" width="320" height="524"/>
         <image name="home_icon" width="35" height="35"/>
         <image name="home_overlay" width="320" height="100"/>
         <image name="home_selected_icon" width="35" height="35"/>
         <image name="home_spinner" width="146" height="146"/>
         <image name="link_icon" width="75" height="95"/>
+        <image name="loading-1" width="61" height="19"/>
+        <image name="login_form" width="300" height="132"/>
         <image name="nevermind" width="320" height="53"/>
         <image name="photo_icon" width="75" height="95"/>
         <image name="quote_icon" width="75" height="96"/>

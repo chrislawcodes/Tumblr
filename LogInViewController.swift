@@ -1,31 +1,16 @@
 //
-//  ComposeViewController.swift
+//  LogInViewController.swift
 //  Tumblr
 //
-//  Created by Claw on 10/7/15.
+//  Created by Claw on 10/9/15.
 //  Copyright © 2015 Claw. All rights reserved.
 //
 
 import UIKit
 
-class ComposeViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+class LogInViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
     
     var isPresenting: Bool = true
-    
-    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
-        isPresenting = true
-        return self
-    }
-    
-    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
-        isPresenting = false
-        return self
-    }
-    
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        // The value here should be the duration of the animations scheduled in the animationTransition method
-        return 0.4
-    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var destinationVC = segue.destinationViewController as UIViewController
@@ -45,8 +30,22 @@ class ComposeViewController: UIViewController, UIViewControllerTransitioningDele
         // Dispose of any resources that can be recreated.
     }
     
+    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+        isPresenting = true
+        return self
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+        isPresenting = false
+        return self
+    }
+    
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+        // The value here should be the duration of the animations scheduled in the animationTransition method
+        return 0.4
+    }
+    
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        print("animating transition")
         var containerView = transitionContext.containerView()
         var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
@@ -68,8 +67,8 @@ class ComposeViewController: UIViewController, UIViewControllerTransitioningDele
             }
         }
     }
-
-    @IBAction func onNevermindButton(sender: AnyObject) {
+    
+    @IBAction func onLoginTap(sender: UITapGestureRecognizer) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -77,9 +76,9 @@ class ComposeViewController: UIViewController, UIViewControllerTransitioningDele
         super.init(coder: aDecoder)!
         modalPresentationStyle = UIModalPresentationStyle.Custom
         transitioningDelegate = self
-        
-        
     }
+
+
     /*
     // MARK: - Navigation
 
