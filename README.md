@@ -8,7 +8,7 @@ Completed User Stories:
 
 * [x] Required: Tapping on Home, Search, Account, or Trending should show the respective screen and highlight the tab bar button.
 * [x] Required: Compose button should modally present the compose screen.
-* [1/2] Optional: Compose screen is faded in while the buttons animate in. (Compose fades but buttons don't animate)
+* [ ] Optional: Compose screen is faded in while the buttons animate in. (Compose fades but buttons don't animate)
 * [x] Optional: Login button should show animate the login form over the view controller.
 * [x] Discover bubble should bob up and down unless the SearchViewController is tapped.
 
